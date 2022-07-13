@@ -1,18 +1,20 @@
-const express=require('express');
-const app=express();
-const port =4000;
-const mongo=require('./connect');
-const router=require('./routes/booksRouter');
-const cors=require('cors')
-  //middlewares
+const express = require("express");
+const app = express();
+const dotenv = require("dotenv");
+const mongo = require("./connect");
+const router = require("./routes/booksRouter");
+const cors = require("cors");
+dotenv.config();
+//middlewares
 app.use(express.json());
-app.use(cors())
-app.use("/books",router);
+app.use(cors());
+app.use("/books", router);
 
 //connecting to db
 mongo.connect();
 
-app.listen(port,()=>console.log(`server started on port number ${port}`))
-
+app.listen(process.env.PORT, () =>
+  console.log(`server started on port number ${process.env.PORT}`)
+);
 
 //
