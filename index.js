@@ -12,6 +12,9 @@ app.use("/books", router);
 
 //connecting to db
 mongo.connect();
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 const PORT = process.env.PORT || 5000;
 
