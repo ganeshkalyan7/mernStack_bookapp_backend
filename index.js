@@ -13,8 +13,8 @@ app.use("/books", router);
 //connecting to db
 mongo.connect();
 
-app.listen(process.env.PORT, () =>
-  console.log(`server started on port number ${process.env.PORT}`)
-);
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`server started on port number ${PORT}`));
 
 //
