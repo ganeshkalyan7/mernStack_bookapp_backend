@@ -6,5 +6,6 @@ exports.connect = () => {
     console.log("DB connected successfully.....");
   } catch (err) {
     console.log(err);
+    
   }
 };
